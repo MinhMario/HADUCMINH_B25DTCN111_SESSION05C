@@ -9,20 +9,22 @@ int main(){
 	scanf("%d",&dien);
 	printf("Nhap ho tieu dung (1-3):");
 	scanf("%d",&hotieudung);
+
 	float phuphigiadinh=0.05;
 	float phuphikinhdoanh=0.1;
 	float phuphisanxuat=0.08;
-	if(dien>0&&dien<50){
-	 tien=dien*1500;
+	const float PRICE_LEVEL1=1500,PRICE_LEVEL2=2000,PRICE_LEVEL3=2500,PRICE_LEVEL4=3000;
+	if(dien>0&&dien<=50){
+	 tien=dien*PRICE_LEVEL1;
 	
-	}else if(dien>50&&dien<100){
-	 tien=(dien-50)*2000+50*1500;
+	}else if(dien>50&&dien<=100){
+	 tien=(dien-50)*PRICE_LEVEL2+50*PRICE_LEVEL1;
 		
-	}else if(dien>100&&dien<200){
-	 tien=(dien-100)*2500+50*1500+50*2000;
+	}else if(dien>100&&dien<=200){
+	 tien=(dien-100)*PRICE_LEVEL3+50*PRICE_LEVEL2+50*PRICE_LEVEL1;
 	
 	}else if(dien>200){
-	 tien=(dien-200)*3000+50*1500+50*2000+100*2500;
+	 tien=(dien-200)*PRICE_LEVEL4+100*PRICE_LEVEL3+50*PRICE_LEVEL2+50*PRICE_LEVEL1;
 	}else{
 		printf("Khong phu hop");
 	}
